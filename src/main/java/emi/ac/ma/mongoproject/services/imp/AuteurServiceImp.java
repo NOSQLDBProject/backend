@@ -24,12 +24,12 @@ public class AuteurServiceImp implements AuteurService {
         return auteurRepository.findAll();
     }
 
-    public void updateAuteur(String id, Auteur updatedAuteur) {
+    public void updateAuteur(Long id, Auteur updatedAuteur) {
         updatedAuteur.setId(id);
         auteurRepository.save(updatedAuteur);
     }
 
-    public void deleteAuteur(String id) {
+    public void deleteAuteur(Long id) {
         auteurRepository.deleteById(id);
     }
 }

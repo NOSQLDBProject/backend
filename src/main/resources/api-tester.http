@@ -1,0 +1,12 @@
+POST http://localhost:8000/auteurs/add
+Content-Type: application/json
+
+{
+  "nom": "Doe",
+  "prenom": "John",
+  "date_naissance": "1980-01-01",
+  "date_deces": "2020-01-01",
+  "nationalite": "américain",
+  "biographie": "John Doe est un écrivain américain né le 1er janvier 1980 et décédé le 1er janvier 2020.",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/John_Doe.jpg"
+}

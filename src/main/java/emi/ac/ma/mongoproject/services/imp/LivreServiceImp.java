@@ -36,7 +36,7 @@ public class LivreServiceImp implements LivreService {
         return livreResponses;
     }
 
-    public LivreResponse updateLivre(String id, Livre updatedLivre) {
+    public LivreResponse updateLivre(Long id, Livre updatedLivre) {
         updatedLivre.setId(id);
         livreRepository.save(updatedLivre);
         LivreResponse livreResponse=new LivreResponse();
@@ -48,7 +48,7 @@ public class LivreServiceImp implements LivreService {
         return livreResponse;
     }
 
-    public void deleteLivre(String id) {
+    public void deleteLivre(Long id) {
         livreRepository.deleteById(id);
     }
 }

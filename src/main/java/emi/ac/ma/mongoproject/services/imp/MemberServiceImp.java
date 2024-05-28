@@ -24,12 +24,12 @@ public class MemberServiceImp implements MemberService {
         return memberRepository.findAll();
     }
 
-    public void updateMember(String id, Member updatedMember) {
+    public void updateMember(Long id, Member updatedMember) {
         updatedMember.setId(id);
         memberRepository.save(updatedMember);
     }
 
-    public void deleteMember(String id) {
+    public void deleteMember(Long id) {
         memberRepository.deleteById(id);
     }
 }

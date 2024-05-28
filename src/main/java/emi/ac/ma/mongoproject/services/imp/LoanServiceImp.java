@@ -35,7 +35,7 @@ public class LoanServiceImp implements LoanService {
         return loanRepository.findAll();
     }
 
-    public void returnLoan(String id) {
+    public void returnLoan(Long id) {
         Loan loan = loanRepository.findById(id).orElseThrow();
         loan.setReturnDate(LocalDate.now());
         loanRepository.save(loan);

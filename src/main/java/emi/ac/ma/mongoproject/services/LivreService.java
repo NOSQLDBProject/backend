@@ -8,6 +8,6 @@ import java.util.List;
 public interface LivreService {
     Livre addLivre(Livre livre);
     List<LivreResponse> getAllLivres();
-    LivreResponse updateLivre(String id, Livre updatedLivre);
-    void deleteLivre(String id);
+    LivreResponse updateLivre(Long id, Livre updatedLivre);
+    void deleteLivre(Long id);
 }

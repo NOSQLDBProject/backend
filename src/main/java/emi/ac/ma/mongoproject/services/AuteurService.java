@@ -7,6 +7,6 @@ import java.util.List;
 public interface AuteurService {
     Auteur addAuteur(Auteur auteur);
     List<Auteur> getAllAuteurs();
-    public void updateAuteur(String id, Auteur updatedAuteur);
-    public void deleteAuteur(String id);
+    public void updateAuteur(Long id, Auteur updatedAuteur);
+    public void deleteAuteur(Long id);
 }

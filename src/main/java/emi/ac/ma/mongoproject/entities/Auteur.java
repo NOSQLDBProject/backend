@@ -1,24 +1,24 @@
 package emi.ac.ma.mongoproject.entities;
 
 import emi.ac.ma.mongoproject.entities.Livre;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
 
-@Document(collection = "auteurs")
+@Document
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Auteur {
     @Id
-    private String id;
+    private Long id;
     private String nom;
     private String prenom;
     private String dateDeNaissance;

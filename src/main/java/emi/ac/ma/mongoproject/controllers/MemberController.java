@@ -9,28 +9,33 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/members")
+@CrossOrigin("*")
 public class MemberController {
 
-    @Autowired
-    private MemberService memberService;
 
-    @PostMapping
+    private final MemberService memberService;
+
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
+
+    @PostMapping("/add")
     public Member addMember(@RequestBody Member member) {
         return memberService.addMember(member);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Member> getAllMembers() {
         return memberService.getAllMembers();
     }
 
     @PutMapping("/{id}")
-    public void updateMember(@PathVariable String id, @RequestBody Member updatedMember) {
+    public void updateMember(@PathVariable Long id, @RequestBody Member updatedMember) {
         memberService.updateMember(id, updatedMember);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteMember(@PathVariable String id) {
+    public void deleteMember(@PathVariable Long id) {
         memberService.deleteMember(id);
     }
 }

@@ -10,28 +10,33 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/livres")
+@CrossOrigin("*")
 public class LivreController {
 
-    @Autowired
-    private LivreService livreService;
 
-    @PostMapping
+    private final LivreService livreService;
+
+    public LivreController(LivreService livreService) {
+        this.livreService = livreService;
+    }
+
+    @PostMapping("/add")
     public Livre addLivre(@RequestBody Livre livre) {
         return livreService.addLivre(livre);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<LivreResponse> getAllLivres() {
         return livreService.getAllLivres();
     }
 
     @PutMapping("/{id}")
-    public void updateLivre(@PathVariable String id, @RequestBody Livre updatedLivre) {
+    public void updateLivre(@PathVariable Long id, @RequestBody Livre updatedLivre) {
         livreService.updateLivre(id, updatedLivre);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteLivre(@PathVariable String id) {
+    public void deleteLivre(@PathVariable Long id) {
         livreService.deleteLivre(id);
     }
 }

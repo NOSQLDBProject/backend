@@ -9,23 +9,28 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/loans")
+@CrossOrigin("*")
 public class LoanController {
 
-    @Autowired
-    private LoanService loanService;
 
-    @PostMapping
+    private final LoanService loanService;
+
+    public LoanController(LoanService loanService) {
+        this.loanService = loanService;
+    }
+
+    @PostMapping("/add")
     public Loan addLoan(@RequestBody Loan loan) {
         return loanService.addLoan(loan);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Loan> getAllLoans() {
         return loanService.getAllLoans();
     }
 
     @PutMapping("/return/{id}")
-    public void returnLoan(@PathVariable String id) {
+    public void returnLoan(@PathVariable Long id) {
         loanService.returnLoan(id);
     }
 }
