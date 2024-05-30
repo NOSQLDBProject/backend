@@ -17,7 +17,7 @@ public class Livre {
     private Long id;
     private String titre;
     @DBRef
-    private Auteur auteur;
+    private Adherent adherent;
     private String isbn;
     private int nombreDeCopies;
     private boolean estDisponible;

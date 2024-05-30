@@ -1,11 +1,9 @@
 package emi.ac.ma.mongoproject.entities.response;
 
-import emi.ac.ma.mongoproject.entities.Auteur;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 
 @AllArgsConstructor
 @NoArgsConstructor

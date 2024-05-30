@@ -27,7 +27,7 @@ public class LivreServiceImp implements LivreService {
         for (Livre livre:livres) {
             LivreResponse livreResponse=new LivreResponse();
             livreResponse.setTitre(livre.getTitre());
-            livreResponse.setAuteurName(livre.getAuteur().getNom() + " " + livre.getAuteur().getPrenom());
+            livreResponse.setAuteurName(livre.getAdherent().getNom() + " " + livre.getAdherent().getPrenom());
             livreResponse.setIsbn(livre.getIsbn());
             livreResponse.setNombreDeCopies(livre.getNombreDeCopies());
             livreResponse.setEstDisponible(livre.isEstDisponible());
@@ -41,7 +41,7 @@ public class LivreServiceImp implements LivreService {
         livreRepository.save(updatedLivre);
         LivreResponse livreResponse=new LivreResponse();
         livreResponse.setTitre(updatedLivre.getTitre());
-        livreResponse.setAuteurName(updatedLivre.getAuteur().getNom() + " " + updatedLivre.getAuteur().getPrenom());
+        livreResponse.setAuteurName(updatedLivre.getAdherent().getNom() + " " + updatedLivre.getAdherent().getPrenom());
         livreResponse.setIsbn(updatedLivre.getIsbn());
         livreResponse.setNombreDeCopies(updatedLivre.getNombreDeCopies());
         livreResponse.setEstDisponible(updatedLivre.isEstDisponible());

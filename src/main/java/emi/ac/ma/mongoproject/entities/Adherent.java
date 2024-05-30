@@ -1,12 +1,9 @@
 package emi.ac.ma.mongoproject.entities;
 
-import emi.ac.ma.mongoproject.entities.Livre;
 import lombok.*;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 
@@ -16,16 +13,15 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Auteur {
+public class Adherent {
     @Id
     private Long id;
     private String nom;
     private String prenom;
-    private String dateDeNaissance;
-    private String dateDeDeces;
-    private String nationalite;
-    private String biographie;
     private String photo;
+    private String cin;
+    private String email;
+    private String telephone;
     @DBRef
-    private List<Livre> livres;
+    private List<Livre> livresLoaned;
 }
