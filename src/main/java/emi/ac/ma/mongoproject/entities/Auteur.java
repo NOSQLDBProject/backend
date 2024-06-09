@@ -21,9 +21,7 @@ public class Auteur {
     @Id
     @GeneratedValue
     private Long id;
-
     private String name;
-
     private String biography;
     private String dateOfBirth;
     private String dateOfDeath;

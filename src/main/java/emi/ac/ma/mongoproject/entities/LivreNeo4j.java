@@ -26,6 +26,6 @@ public class LivreNeo4j {
     private String isbn;
     private String type;
     private String imagePath;
-    private Auteur auteur;
+    private Long auteurId;
     private String description;
 }

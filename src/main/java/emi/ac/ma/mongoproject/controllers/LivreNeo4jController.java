@@ -1,7 +1,6 @@
 package emi.ac.ma.mongoproject.controllers;
 
 
-import emi.ac.ma.mongoproject.entities.Auteur;
 import emi.ac.ma.mongoproject.entities.LivreNeo4j;
 import emi.ac.ma.mongoproject.services.LivreNeo4jService;
 import org.springframework.web.bind.annotation.*;
@@ -42,8 +41,4 @@ public class LivreNeo4jController {
         livreNeo4jService.deleteLivre(id);
     }
 
-    @GetMapping("/auteur")
-    public LivreNeo4j getLivresByAuteur(@RequestBody Auteur auteur) {
-        return livreNeo4jService.getLivresByAuteur(auteur);
-    }
 }
