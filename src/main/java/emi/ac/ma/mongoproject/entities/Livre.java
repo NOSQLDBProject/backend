@@ -20,9 +20,10 @@ public class Livre {
     private Long id;
     private String titre;
     private List<Long> adherents;
-    private Long isbn;
+    private String isbn;
     private int nombreDeCopies;
     private boolean estDisponible;
+    private String description;
     private String type;
     private String imagePath;
 }

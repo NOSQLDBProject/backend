@@ -23,11 +23,9 @@ public class LivreNeo4j {
     private Long id;
     private String titre;
     private List<Long> adherents;
-    private Long isbn;
-    private int nombreDeCopies;
-    private boolean estDisponible;
+    private String isbn;
     private String type;
     private String imagePath;
     private Auteur auteur;
-
+    private String description;
 }
