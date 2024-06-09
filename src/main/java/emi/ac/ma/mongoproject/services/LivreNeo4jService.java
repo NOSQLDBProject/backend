@@ -9,4 +9,5 @@ public interface LivreNeo4jService {
     void deleteLivre(Long id);
     LivreNeo4j updateLivre(LivreNeo4j livre);
     Iterable<LivreNeo4j> getAllLivres();
+    void deleteAll();
 }

@@ -18,6 +18,11 @@ public class LivreNeo4jServiceImp implements LivreNeo4jService {
     }
 
 
+    public void deleteAll() {
+        livreNeo4jRepository.deleteAll();
+    }
+
+
     public LivreNeo4j addLivre(LivreNeo4j livre) {
         Auteur auteur = auteurRepository.findById(livre.getAuteurId()).orElse(null);
         auteur.getLivres().add(livre.getId());

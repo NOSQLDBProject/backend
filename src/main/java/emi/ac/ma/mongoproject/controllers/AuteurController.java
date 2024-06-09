@@ -28,10 +28,7 @@ public class AuteurController {
         return auteurService.getAllAuteurs();
     }
 
-    @PostMapping("/addBook/{auteurId}/{livreId}")
-    public Auteur addLivreToAuteur(@PathVariable Long auteurId, @PathVariable Long livreId) {
-        return auteurService.addLivreToAuteur(auteurId, livreId);
-    }
+
 
     @DeleteMapping("/{id}")
     public void deleteAuteur(@PathVariable Long id) {

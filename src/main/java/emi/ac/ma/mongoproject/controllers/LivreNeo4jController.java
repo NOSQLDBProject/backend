@@ -20,7 +20,7 @@ public class LivreNeo4jController {
         return livreNeo4jService.getLivre(id);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public Iterable<LivreNeo4j> getAllLivres() {
         return livreNeo4jService.getAllLivres();
     }
@@ -35,6 +35,7 @@ public class LivreNeo4jController {
         livre.setId(id);
         return livreNeo4jService.updateLivre(livre);
     }
+
 
     @DeleteMapping("/{id}")
     public void deleteLivre(@PathVariable Long id) {
