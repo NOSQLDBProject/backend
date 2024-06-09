@@ -11,7 +11,6 @@ import lombok.Setter;
 @Setter
 public class LivreResponse {
     private String titre;
-
     private String auteurName;
     private String isbn;
     private int nombreDeCopies;

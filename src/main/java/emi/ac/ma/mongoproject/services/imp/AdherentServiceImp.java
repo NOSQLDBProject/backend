@@ -5,6 +5,7 @@ import emi.ac.ma.mongoproject.repositories.AdherentRepository;
 import emi.ac.ma.mongoproject.services.AdherentService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,6 +18,7 @@ public class AdherentServiceImp implements AdherentService {
     }
 
     public Adherent addAdherent(Adherent adherent) {
+        adherent.setLivresLoaned(new ArrayList<>());
         return adherentRepository.save(adherent);
     }
 

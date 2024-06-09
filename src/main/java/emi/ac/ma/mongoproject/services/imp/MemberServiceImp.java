@@ -23,6 +23,9 @@ public class MemberServiceImp implements MemberService {
     public List<Member> getAllMembers() {
         return memberRepository.findAll();
     }
+    public Member getMember(Long id) {
+        return memberRepository.findById(id).orElse(null);
+    }
 
     public void updateMember(Long id, Member updatedMember) {
         updatedMember.setId(id);

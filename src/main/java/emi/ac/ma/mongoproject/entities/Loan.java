@@ -1,11 +1,10 @@
 package emi.ac.ma.mongoproject.entities;
 
 import lombok.*;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.time.LocalDate;
 
 @Document()
 @Data
@@ -15,12 +14,10 @@ import java.time.LocalDate;
 @Setter
 public class Loan {
     @Id
+    @GeneratedValue
     private Long id;
-    @DBRef
-    private Livre livre;
-    @DBRef
-    private Member member;
-    private LocalDate loanDate = LocalDate.now();
-    private LocalDate returnDate;
+    private Long adherentId;
+    private Long livreId;
+    private String loandate;
+    private String returnDate;
 }
-

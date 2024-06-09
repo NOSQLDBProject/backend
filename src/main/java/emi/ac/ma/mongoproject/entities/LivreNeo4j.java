@@ -1,20 +1,23 @@
 package emi.ac.ma.mongoproject.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Relationship;
 
 import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.util.List;
 
-@Document()
-@Data
-@AllArgsConstructor
+@Node
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-public class Livre {
+public class LivreNeo4j {
     @Id
     @GeneratedValue
     private Long id;
@@ -25,4 +28,6 @@ public class Livre {
     private boolean estDisponible;
     private String type;
     private String imagePath;
+    private Auteur auteur;
+
 }

@@ -29,6 +29,11 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
+    @GetMapping("/{id}")
+    public Member getMember(@PathVariable Long id) {
+        return memberService.getMember(id);
+    }
+
     @PutMapping("/{id}")
     public void updateMember(@PathVariable Long id, @RequestBody Member updatedMember) {
         memberService.updateMember(id, updatedMember);

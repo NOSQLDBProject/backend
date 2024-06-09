@@ -2,7 +2,6 @@ package emi.ac.ma.mongoproject.controllers;
 
 import emi.ac.ma.mongoproject.entities.Loan;
 import emi.ac.ma.mongoproject.services.LoanService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
 @CrossOrigin("*")
 public class LoanController {
 
-
     private final LoanService loanService;
 
     public LoanController(LoanService loanService) {
@@ -20,17 +18,19 @@ public class LoanController {
     }
 
     @PostMapping("/add")
-    public Loan addLoan(@RequestBody Loan loan) {
+    public Loan createLoan(@RequestBody Loan loan) {
         return loanService.addLoan(loan);
     }
 
     @GetMapping("/all")
     public List<Loan> getAllLoans() {
-        return loanService.getAllLoans();
+        return loanService.getAll();
     }
 
-    @PutMapping("/return/{id}")
-    public void returnLoan(@PathVariable Long id) {
-        loanService.returnLoan(id);
+    @PutMapping("/update")
+    public Loan updateLoan(@RequestBody Loan loan) {
+        return loanService.updateLoan(loan);
     }
+
+
 }

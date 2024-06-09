@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 
@@ -15,13 +17,12 @@ import java.util.List;
 @Setter
 public class Adherent {
     @Id
+    @GeneratedValue
     private Long id;
     private String nom;
     private String prenom;
-    private String photo;
     private String cin;
     private String email;
     private String telephone;
-    @DBRef
-    private List<Livre> livresLoaned;
+    private List<Long> livresLoaned;
 }

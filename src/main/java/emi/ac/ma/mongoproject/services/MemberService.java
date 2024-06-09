@@ -5,8 +5,9 @@ import emi.ac.ma.mongoproject.entities.Member;
 import java.util.List;
 
 public interface MemberService {
-    public Member addMember(Member member);
-    public List<Member> getAllMembers();
-    public void updateMember(Long id, Member updatedMember);
-    public void deleteMember(Long id);
+    Member addMember(Member member);
+    List<Member> getAllMembers();
+    Member getMember(Long id);
+    void updateMember(Long id, Member updatedMember);
+    void deleteMember(Long id);
 }

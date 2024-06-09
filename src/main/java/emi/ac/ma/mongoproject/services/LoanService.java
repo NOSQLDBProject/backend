@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface LoanService {
     Loan addLoan(Loan loan);
-    List<Loan> getAllLoans();
-    void returnLoan(Long id);
-
+    List<Loan> getAll();
+    Loan updateLoan(Loan loan);
 }
