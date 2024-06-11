@@ -9,4 +9,5 @@ public interface AdherentService {
     List<Adherent> getAllAdherents();
     void updateAdherent(Long id, Adherent updatedAdherent);
     void deleteAdherent(Long id);
+    Adherent getAdherent(Long id);
 }

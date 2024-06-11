@@ -36,6 +36,11 @@ public class LivreController {
         livreService.updateLivre(id,updatedLivre);
     }
 
+    @GetMapping("/{id}")
+    public Livre getLivre(@PathVariable Long id) {
+        return livreService.getLivre(id);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteLivre(@PathVariable Long id) {
         livreService.deleteLivre(id);

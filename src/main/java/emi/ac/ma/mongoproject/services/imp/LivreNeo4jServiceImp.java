@@ -26,6 +26,7 @@ public class LivreNeo4jServiceImp implements LivreNeo4jService {
     public LivreNeo4j addLivre(LivreNeo4j livre) {
         Auteur auteur = auteurRepository.findById(livre.getAuteurId()).orElse(null);
         auteur.getLivres().add(livre.getId());
+        auteurRepository.save(auteur);
         return livreNeo4jRepository.save(livre);
     }
 

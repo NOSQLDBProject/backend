@@ -10,5 +10,6 @@ public interface LivreService {
     List<Livre> getAllLivres();
     Livre updateLivre(Long id,Livre updatedLivre);
     void deleteLivre(Long id);
+    Livre getLivre(Long id);
 
 }

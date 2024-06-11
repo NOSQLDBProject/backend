@@ -7,5 +7,5 @@ import java.util.List;
 public interface LoanService {
     Loan addLoan(Loan loan);
     List<Loan> getAll();
-    Loan updateLoan(Loan loan);
+    Loan updateLoan(Long loanId);
 }

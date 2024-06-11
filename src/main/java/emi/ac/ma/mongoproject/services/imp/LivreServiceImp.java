@@ -30,6 +30,10 @@ public class LivreServiceImp implements LivreService {
         return livreRepository.save(updatedLivre);
     }
 
+    public Livre getLivre(Long id) {
+        return livreRepository.findById(id).orElse(null);
+    }
+
     public void deleteLivre(Long id) {
         livreRepository.deleteById(id);
     }

@@ -25,6 +25,11 @@ public class AdherentController {
         return adherentService.addAdherent(adherent);
     }
 
+    @GetMapping("/{id}")
+    public Adherent getAdherent(@PathVariable Long id) {
+        return adherentService.getAdherent(id);
+    }
+
     @GetMapping("/all")
     public List<Adherent> getAllAdherents() {
         return adherentService.getAllAdherents();

@@ -22,6 +22,10 @@ public class AdherentServiceImp implements AdherentService {
         return adherentRepository.save(adherent);
     }
 
+    public Adherent getAdherent(Long id) {
+        return adherentRepository.findById(id).orElse(null);
+    }
+
     public List<Adherent> getAllAdherents() {
         return adherentRepository.findAll();
     }
