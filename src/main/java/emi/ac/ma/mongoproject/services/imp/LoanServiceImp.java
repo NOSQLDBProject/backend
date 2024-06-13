@@ -60,4 +60,9 @@ public class LoanServiceImp implements LoanService {
         return loanRepository.save(updatedLoan);
     }
 
+    public void deleteLoan(Long loanId) {
+        loanRepository.deleteById(loanId);
+    }
+
+
 }

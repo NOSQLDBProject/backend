@@ -1,5 +1,6 @@
 package emi.ac.ma.mongoproject.controllers;
 
+import emi.ac.ma.mongoproject.entities.request.UserRequest;
 import emi.ac.ma.mongoproject.services.UserService;
 import org.springframework.web.bind.annotation.*;
 import emi.ac.ma.mongoproject.entities.response.User;
@@ -25,9 +26,9 @@ public class UserController {
         userService.updateUser(id, updatedUser);
     }
 
-    @GetMapping("/login")
-    public void getUser(@RequestBody User user) {
-        userService.getUser(user.getEmail(),user.getPassword());
+    @PostMapping("/login")
+    public User getUser(@RequestBody UserRequest user) {
+        return userService.getUser(user.getEmail(),user.getPassword());
     }
 
 

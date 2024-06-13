@@ -32,5 +32,10 @@ public class LoanController {
         return loanService.updateLoan(id);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void deleteLoan(@PathVariable Long id) {
+        loanService.deleteLoan(id);
+    }
+
 
 }
